@@ -1,7 +1,7 @@
 const { User } = require("../db");
 
-const postUsers = async (password, variables) => {
-  const user = await User.Create({ password: password, variables: variables });
+const postUsers = async ({dId, password, variables}) => {
+  const user = await User.create({dId:dId , password: password, variables: variables });
   return user
 };
 
