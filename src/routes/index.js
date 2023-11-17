@@ -5,6 +5,6 @@ const post = require("../middleware/post")
 const getAll = require("../middleware/getAll")
 
 router.post("/api/getdevicecredentials", post);
-router.get("/nahue", getAll);
+router.get("/all", getAll);
 
 module.exports = router;

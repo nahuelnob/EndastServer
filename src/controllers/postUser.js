@@ -2,6 +2,7 @@ const { User } = require("../db");
 
 const postUsers = async ({dId, password, variables}) => {
   const user = await User.create({dId:dId , password: password, variables: variables });
+  
   const credenciales = { 
     username: "5mhCCz1g9Y", 
     password: "uj4jRrd3Zr", 
