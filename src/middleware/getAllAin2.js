@@ -1,12 +1,12 @@
-const getAin0 = require("../controllers/getAin0")
+const getAin2 = require("../controllers/getAin2")
 
-const getAllAin0 = async (req, res) => {
+const getAllAin2 = async (req, res) => {
     try {
-        const allAin0 = await getAin0()
-        res.status(200).json(allAin0)
+        const allAin2 = await getAin2()
+        res.status(200).json(allAin2)
     } catch (error) {
         
     }
 }
 
-module.exports = getAllAin0
+module.exports = getAllAin2
