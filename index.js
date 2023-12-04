@@ -61,7 +61,8 @@ const TOPIC = "64c314be56857449102a9d4b/testid/aPtCeiVxcp/sdata"; //din0
 // });
 
 // // Publicar un mensaje después de conectarse
-// const mensaje = "{'value': 'true'}";
+// const mensaje = "{value: 3974}";
+// // const mensaje = "{value: true}";
 // client.publish(TOPIC, mensaje, (error) => {
 //   if (error) {
 //     console.error(`Error al publicar en ${TOPIC}:`, error);
