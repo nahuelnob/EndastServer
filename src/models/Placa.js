@@ -2,11 +2,11 @@ const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
   sequelize.define(
-    "User",
+    "Placa",
     {
       dId: {
         type: DataTypes.STRING,
-        // primaryKey: true,
+        primaryKey: true,
         // autoIncrement: true,
         allowNull: false,
       },
@@ -15,7 +15,7 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       variables: {
-        type: DataTypes.ARRAY(DataTypes.STRING),
+        type: DataTypes.ARRAY(DataTypes.JSON),
         allowNull: false,
       },
     },

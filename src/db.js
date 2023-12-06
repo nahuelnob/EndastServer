@@ -2,7 +2,7 @@ require("dotenv").config();
 const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
-const UserModel = require("./models/User");
+const PlacaModel = require("./models/Placa");
 const Ain0Model = require("./models/Ain0");
 const Ain1Model = require("./models/Ain1");
 const Ain2Model = require("./models/Ain2");
@@ -17,13 +17,13 @@ const sequelize = new Sequelize(
   }
 );
 
-UserModel(sequelize);
+PlacaModel(sequelize);
 Ain0Model(sequelize);
 Ain1Model(sequelize);
 Ain2Model(sequelize);
 Ain3Model(sequelize);
 
-const { User } = sequelize.models;
+const { Placa } = sequelize.models;
 const { Ain0 } = sequelize.models;
 const { Ain1 } = sequelize.models;
 const { Ain2 } = sequelize.models;

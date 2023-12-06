@@ -1,18 +1,24 @@
-const { User } = require("../db");
+const { Placa } = require("../db");
+let contador = 0;
 
-const postUsers = async ({ dId, password, variables }) => {
-  const user = await User.create({
-    dId: dId,
-    password: password,
-    variables: variables,
+const postPlaca = async ({ dId, password, variables }) => {
+  const [placa, created] = await Placa.findOrCreate({
+    where: { dId: dId },
+    defaults: {
+      password: password,
+      variables: variables,
+    },
   });
+
+  if (created) {
+    contador += 1;
+  }
 
   const credenciales = {
     username: "5mhCCz1g9Y",
     password: "uj4jRrd3Zr",
     clientId: "device_testid_89681",
-    // topic: password,
-    topic: "64c314be56857449102a9d4b/testid/",
+    topic: `64c314be56857449102a9d4b/testid${contador.toString()}/`,
     variables: [
       {
         variableFullName: "din0",
@@ -88,7 +94,8 @@ const postUsers = async ({ dId, password, variables }) => {
       },
     ],
   };
+  if (!created) throw new Error("Placa ya creada");
   return credenciales;
 };
 
-module.exports = postUsers;
+module.exports = postPlaca;

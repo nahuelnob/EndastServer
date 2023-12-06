@@ -1,7 +1,7 @@
-const { User } = require("../db");
+const { Placa } = require("../db");
 
 const getAll = async () => {
-  const all = await User.findAll();
+  const all = await Placa.findAll();
   return all;
 };
 
