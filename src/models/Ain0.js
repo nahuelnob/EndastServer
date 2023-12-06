@@ -17,6 +17,18 @@ module.exports = (sequelize) => {
           min: 0,
           max: 4095,
         },
+      },
+      porcentaje: {
+        type: DataTypes.INTEGER,
+        allowNull:false,
+        validate: {
+          min: 0,
+          max: 100,
+        },
+      },
+      placa: {
+        type: DataTypes.STRING,
+        allowNull:false,
       }
     },
   );

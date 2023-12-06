@@ -1,24 +1,21 @@
 const { Placa } = require("../db");
-let contador = 0;
 
 const postPlaca = async ({ dId, password, variables }) => {
+
   const [placa, created] = await Placa.findOrCreate({
     where: { dId: dId },
     defaults: {
       password: password,
       variables: variables,
+      topic: `64c314be56857449102a9d4b/${dId.toString()}/`
     },
   });
-
-  if (created) {
-    contador += 1;
-  }
 
   const credenciales = {
     username: "5mhCCz1g9Y",
     password: "uj4jRrd3Zr",
     clientId: "device_testid_89681",
-    topic: `64c314be56857449102a9d4b/testid${contador.toString()}/`,
+    topic: "64c314be56857449102a9d4b/testid/",
     variables: [
       {
         variableFullName: "din0",
@@ -94,7 +91,7 @@ const postPlaca = async ({ dId, password, variables }) => {
       },
     ],
   };
-  if (!created) throw new Error("Placa ya creada");
+  if (!created) if (!country) throw new Error("No existe un país con ese ID");
   return credenciales;
 };
 
