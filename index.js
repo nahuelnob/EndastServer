@@ -8,7 +8,7 @@ const axios = require("axios");
 //********************************************************************
 const { conn } = require("./src/db.js");
 conn
-  .sync({ force: true })
+  .sync({ force: false })
   .then(() => {
     server.listen(PORT, HOST, () => {
       console.log(`Server listening on ${HOST}:${PORT}`);
