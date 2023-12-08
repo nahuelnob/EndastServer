@@ -21,7 +21,7 @@ const postPlaca = async ({ dId, password, variables }) => {
         variableFullName: "din0",
         variableType: "input",
         variable: "aPtCeiVxcp",
-        variableSendFreq: 1,
+        variableSendFreq: 5,
       },
       {
         variableFullName: "din1",
