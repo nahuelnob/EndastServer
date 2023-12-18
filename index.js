@@ -1,5 +1,6 @@
 const server = require("./src/server");
-const HOST = "192.168.0.46";
+// const HOST = "192.168.0.46";
+const HOST = "localhost";
 const PORT = 3001;
 const axios = require("axios");
 

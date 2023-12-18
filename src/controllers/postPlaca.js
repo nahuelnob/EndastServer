@@ -91,7 +91,8 @@ const postPlaca = async ({ dId, password, variables }) => {
       },
     ],
   };
-  if (!created) if (!country) throw new Error("No existe un país con ese ID");
+  if (!created && (placa.dId === dId && placa.password === password)) return credenciales
+  if (!created && (placa.dId !== dId || placa.password !== password)) throw new Error ('Error')
   return credenciales;
 };
 
