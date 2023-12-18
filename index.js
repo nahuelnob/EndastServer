@@ -1,6 +1,6 @@
 const server = require("./src/server");
-// const HOST = "192.168.0.46";
-const HOST = "localhost";
+const HOST = "192.168.0.46";
+// const HOST = "localhost";
 const PORT = 3001;
 const axios = require("axios");
 
@@ -9,7 +9,7 @@ const axios = require("axios");
 //********************************************************************
 const { conn } = require("./src/db.js");
 conn
-  .sync({ force: false })
+  .sync({ force: true })
   .then(() => {
     server.listen(PORT, HOST, () => {
       console.log(`Server listening on ${HOST}:${PORT}`);
