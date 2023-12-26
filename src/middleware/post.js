@@ -5,7 +5,7 @@ const post = async (req, res) => {
 
   try {
     const placa = await postPlaca({ dId, password, variables });
-
+    console.log('palca--->',dId);
     res.status(200).json(placa);
   } catch (error) {
     res.status(500).json({ error: error.message });
