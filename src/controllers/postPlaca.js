@@ -7,7 +7,7 @@ const postPlaca = async ({ dId, password, variables }) => {
     defaults: {
       password: password,
       variables: variables,
-      topic: `64c314be56857449102a9d4b/${dId.toString()}/`
+      topic: `topic/device_/${dId.toString()}/`
     },
   });
 
@@ -15,7 +15,7 @@ const postPlaca = async ({ dId, password, variables }) => {
     username: "5mhCCz1g9Y",
     password: "uj4jRrd3Zr",
     clientId: "device_testid_89681",
-    topic: `64c314be56857449102a9d4b/${dId.toString()}/`,
+    topic: `topic/device_${dId.toString()}/`,
     variables: [
       {
         variableFullName: "din0",
